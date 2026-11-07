@@ -1,0 +1,68 @@
+/* Site Blocker pages in the neobrutalism style of awesome-design-skills (yellow sign, navy ink, 3px outlines,
+   offset shadows, no rounding). Shared by the popup, the control page, and the block page. */
+:root {
+  color-scheme: light;
+  --sign: #FDC800;
+  --ink: #1C293C;
+  --accent: #432DD7;
+  --surface: #FBFBF9;
+  --paper: #FFFFFF;
+  --danger: #DC2626;
+  --line: 3px solid var(--ink);
+  --shadow: 6px 6px 0 var(--ink);
+  --shadow-sm: 4px 4px 0 var(--ink);
+  --font: Inter, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--surface); color: var(--ink); font-family: var(--font); }
+.kicker { margin: 0; font-size: 13px; font-weight: 900; letter-spacing: .08em; }
+.stripe { height: 28px; background: repeating-linear-gradient(-45deg, var(--sign) 0 18px, var(--ink) 18px 36px); }
+
+.btn {
+  font: inherit; font-size: 15px; font-weight: 800; color: var(--ink); background: var(--paper);
+  border: var(--line); border-radius: 0; box-shadow: var(--shadow-sm); padding: 9px 20px; cursor: pointer;
+  transition: transform .05s, box-shadow .05s;
+}
+.btn:hover { background: #fff6cc; }
+.btn:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--ink); }
+.btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.btn:disabled { opacity: .45; cursor: default; transform: none; box-shadow: var(--shadow-sm); }
+.btn.primary { background: var(--ink); color: var(--sign); }
+.btn.primary:hover { background: #2a3b55; }
+.btn.wide { width: 100%; }
+
+/* Control panel: used at popup size and on the full control page. */
+.panel { background: var(--paper); border: var(--line); box-shadow: var(--shadow); }
+.panel .top { background: var(--sign); border-bottom: var(--line); padding: 14px 18px; }
+.panel.off .top { background: #E5E7EB; }
+.panel .state { display: block; margin: 2px 0 0; font-size: 28px; font-weight: 900; line-height: 1.2; }
+.panel .detail { margin: 4px 0 0; font-size: 13px; font-weight: 600; }
+.panel .body { padding: 16px 18px 18px; }
+.act { display: flex; flex-direction: column; gap: 14px; }
+.dur { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 900;
+  letter-spacing: .04em; }
+.dur select {
+  font: inherit; font-size: 15px; font-weight: 800; color: var(--ink); background-color: var(--paper);
+  border: var(--line); border-radius: 0; padding: 7px 36px 7px 12px; cursor: pointer; appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink) 50%), linear-gradient(135deg, var(--ink) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 55%, calc(100% - 12px) 55%; background-size: 6px 6px; background-repeat: no-repeat;
+}
+.dur select:hover { background-color: #fff6cc; }
+.dur select:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.dur select:disabled { opacity: .45; cursor: default; }
+.note { margin: 12px 0 0; font-size: 12px; font-weight: 600; }
+.countdown { margin: 0 0 10px; font-size: 22px; font-weight: 900; }
+.row { display: flex; gap: 10px; }
+.row .btn { flex: 1; }
+.warning { margin: 14px 0 0; padding: 8px 10px; border: var(--line); background: #FEE2E2; color: #7F1D1D;
+  font-size: 12px; font-weight: 700; }
+.help { margin-top: 16px; font-size: 12px; font-weight: 600; }
+.help summary { display: inline-block; cursor: pointer; font-weight: 800; text-decoration: underline;
+  text-underline-offset: 3px; list-style: none; }
+.help summary::-webkit-details-marker { display: none; }
+.help summary::before { content: "▸ "; }
+.help[open] summary::before { content: "▾ "; }
+.help summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.help ul { margin: 10px 0 0; padding: 10px 12px 10px 28px; border: var(--line); background: var(--surface); line-height: 1.7; }
+.link { display: inline-block; margin-top: 12px; color: var(--ink); font-size: 12px; font-weight: 800; }
+[hidden] { display: none !important; }

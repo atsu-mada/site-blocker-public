@@ -1,0 +1,33 @@
+/* Layout only; colors and parts come from ui.css. */
+body.popup { width: 320px; padding: 12px 16px 18px 12px; }
+body.popup .act .btn { width: 100%; }
+code { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .9em; white-space: nowrap; }
+
+/* Control page opened by URL: fill the whole window. */
+body.page { height: 100vh; min-height: 520px; display: flex; flex-direction: column; overflow: hidden; }
+body.page main { flex: 1; display: flex; min-height: 0; }
+body.page .panel { flex: 1; display: flex; flex-direction: column; border: 0; box-shadow: none; }
+body.page .panel .top { flex: 1; display: flex; flex-direction: column; justify-content: center;
+  padding: clamp(24px, 5vw, 80px); }
+body.page .kicker { font-size: clamp(14px, 1.4vw, 20px); }
+body.page .panel .state { font-size: clamp(56px, 11vw, 190px); line-height: 1; margin-top: 12px; }
+body.page .panel .detail { font-size: clamp(16px, 2vw, 28px); margin-top: 16px; }
+body.page .panel .body { padding: clamp(20px, 3.5vw, 48px) clamp(24px, 5vw, 80px); }
+body.page .act { flex-direction: row; align-items: stretch; gap: 20px; }
+body.page .dur { font-size: 16px; }
+body.page .dur select, body.page .btn { font-size: clamp(17px, 1.6vw, 22px); padding-top: 14px; padding-bottom: 14px; }
+body.page .act .btn { flex: 1; max-width: 640px; }
+body.page #on-controls .btn { width: min(640px, 100%); }
+body.page #confirm { display: flex; align-items: center; gap: 24px; margin-top: 16px; }
+body.page .countdown { margin: 0; font-size: clamp(22px, 2.4vw, 34px); }
+body.page #confirm .btn { width: auto; min-width: 200px; }
+body.page .help { font-size: 13px; }
+@media (max-width: 720px) {
+  body.page { height: auto; min-height: 100vh; overflow: auto; }
+  body.page .act { flex-direction: column; }
+  body.page .act .btn { max-width: none; }
+  body.page #confirm { flex-direction: column; align-items: stretch; gap: 12px; }
+}
+
+/* Center the state block on the full-window page. */
+body.page .panel .top { align-items: center; text-align: center; }

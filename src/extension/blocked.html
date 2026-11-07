@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ブロック中</title>
+  <link rel="stylesheet" href="ui.css">
+  <link rel="stylesheet" href="blocked.css">
+</head>
+<body class="block">
+  <div class="frame" aria-hidden="true"></div>
+  <div class="tape tape-top" aria-hidden="true"><div class="run"></div></div>
+  <main>
+    <p class="kicker">⚠ ここから先は立入禁止</p>
+    <p class="stop" aria-hidden="true">STOP</p>
+    <h1 id="site">このサイト</h1>
+    <p class="msg">ブロック一覧に入っているサイトです。</p>
+    <div class="btns">
+      <button id="back" class="btn primary" type="button">← 戻る</button>
+      <button id="close" class="btn" type="button">タブを閉じる</button>
+    </div>
+  </main>
+  <div class="tape tape-bottom" aria-hidden="true"><div class="run"></div></div>
+  <script src="blocked.js"></script>
+</body>
+</html>

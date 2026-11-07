@@ -1,0 +1,19 @@
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Generated output and logs
+data/*
+!data/.gitkeep
+
+# Secrets (never commit)
+.env
+.env.*
+*.pem
+*.key
+
+# Python / Node
+__pycache__/
+*.pyc
+node_modules/

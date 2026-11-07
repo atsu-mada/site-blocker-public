@@ -1,0 +1,4 @@
+interface:
+  display_name: "Site Blocker Operator"
+  short_description: "Turn the Site Blocker extension off and on, read its state, and run a guard check with blockctl"
+  default_prompt: "Use $site-blocker-operator to turn site blocking off before this Chrome task and back on when it ends."

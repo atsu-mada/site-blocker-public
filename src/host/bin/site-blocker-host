@@ -1,0 +1,8 @@
+#!/bin/sh
+# Launcher Chrome runs for the native messaging host local.site_blocker.host.
+ROOT="$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)"
+# install.py records the Python to use here, because Chrome starts the host without your shell's variables.
+CONF="${XDG_CONFIG_HOME:-$HOME/.config}/site-blocker/env"
+[ -n "$SITE_BLOCKER_PYTHON" ] || [ ! -f "$CONF" ] || SITE_BLOCKER_PYTHON="$(sed -n 's/^SITE_BLOCKER_PYTHON=//p' "$CONF" | tail -n 1)"
+PY="${SITE_BLOCKER_PYTHON:-$(command -v python3)}"
+cd "$ROOT" && exec "$PY" -s -E -m site_blocker.host "$@"

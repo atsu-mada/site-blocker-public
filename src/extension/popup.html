@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site Blocker</title>
+  <link rel="stylesheet" href="ui.css">
+  <link rel="stylesheet" href="control.css">
+</head>
+<body class="popup">
+  <section id="panel" class="panel" aria-live="polite">
+    <div class="top">
+      <p class="kicker">SITE BLOCKER</p>
+      <strong id="state" class="state">読み込み中…</strong>
+      <p id="detail" class="detail"></p>
+    </div>
+    <div class="body">
+      <div id="off-controls" hidden>
+        <div class="act">
+          <label class="dur"><span>オフにする時間</span>
+            <select id="minutes">
+              <option value="10">10分</option>
+              <option value="20">20分</option>
+              <option value="30">30分</option>
+            </select>
+          </label>
+          <button id="pause" class="btn primary" type="button">20分だけオフにする</button>
+        </div>
+        <div id="confirm" hidden>
+          <p id="countdown" class="countdown"></p>
+          <button id="cancel" class="btn wide" type="button">やめる</button>
+        </div>
+      </div>
+      <div id="on-controls" hidden>
+        <button id="resume" class="btn primary wide" type="button">今すぐオンに戻す</button>
+      </div>
+      <p id="warning" class="warning" hidden></p>
+      <details class="help">
+        <summary>使い方</summary>
+        <ul>
+          <li id="sites">一覧のサイトを止めています。</li>
+          <li>「オフにする」を押すと10秒数えてからオフになります。時間が来たら自動でオンに戻ります。</li>
+          <li>住所欄に <b>sb</b> と打って Enter で操作ページが開きます。<code>sb 10</code> や <code>?for=10</code> で10分を選んだ状態になります。</li>
+        </ul>
+      </details>
+      <a id="open-control" class="link" href="control.html" target="_blank">操作ページを開く →</a>
+    </div>
+  </section>
+  <script src="core.js"></script>
+  <script src="control.js"></script>
+</body>
+</html>
